@@ -1,6 +1,8 @@
 package Chess;
 
+import Chess.pieces.Rook;
 import boardgame.Board;
+import boardgame.Position;
 
 public class ChessMatch {
 	private Board board;
@@ -8,6 +10,7 @@ public class ChessMatch {
 	public ChessMatch() {
 		 //dimensions of the chess game
 		 board = new Board(8, 8);
+		 initialSetup();
 	}
 	
 	//retorna matriz de peças
@@ -19,6 +22,10 @@ public class ChessMatch {
 			}
 		}
 		return mat;
+	}
+	
+	public void initialSetup() {
+		board.placePiece(new Rook(board, Color.WHITE), new Position(2,1));
 	}
 
 }
